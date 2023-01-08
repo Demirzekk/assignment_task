@@ -1,0 +1,1 @@
+enum ServiceConfigEnum { serverUrl, serverUrl2 }
