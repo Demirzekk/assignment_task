@@ -52,12 +52,14 @@ class DioRequest {
   }
 
   // requests
-  Future<Response> get(String path) async {
-    return await _dio.get(path);
+  Future<Response> get({String? path}) async {
+    return await _dio.get(
+      path ?? ServiceConfigEnum.serverUrl.urlToString,
+    );
   }
 
   Future<Response> post(
-      {required String endpoint,
+      {String? endpoint,
       data,
       Map<String, dynamic>? customHeaders,
       Map<String, dynamic>? queryParameters}) async {
@@ -65,6 +67,6 @@ class DioRequest {
         customHeaders: customHeaders ?? {},
         queryParameters: queryParameters ?? {},
         body: data);
-    return await _dio.post(endpoint, data: data);
+    return await _dio.post(endpoint ?? "", data: data);
   }
 }

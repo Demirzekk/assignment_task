@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import 'home.dart';
 
 void main() {
-  runApp(const MyHome());
+  runApp(const GetMaterialApp(home: MyHome()));
 }
